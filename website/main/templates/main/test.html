@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+{% block title %}
+  <title>Главная страница</title>
+{% endblock %}
+
+
+{% block content %}
+<header class="header" id="header">
+    <!--header-start-->
+    <div class="container">
+      <figure class="logo">
+        <a href="#"><img src="/static/img/logo3.png" alt=""></a>
+      </figure>
+        <p>{{float |add:"50"}} {{float |divisibleby:"2"}}</p>
+    <p>{{lst}} {{lst.1}}    {{lst|first}}    {{lst|last}} </p>
+    <p>{{dict}}</p>
+    <p>{{set}} {{set|join:"ы"}}  {{set|length}}</p>
+    <p>{{obj}}</p>
+        <h2>Строки</h2>
+    <p>{{title| capfirst}} {{title| upper}} {{title | lower}} {{title | cut:"l"|cut:"o"}}</p>
+         <p>{{value| default:"нет значения"}}  {{url}}</p>
+      <h1 class="container">Добро пожаловать в наш магазин</h1><br><br>
+    </div>
+
+</header>
+{% endblock %}

@@ -1,0 +1,18 @@
+[flake8]
+max-line-length = 120
+exclude =
+    migrations,
+    __pycache__,
+    *.pyc,
+    venv
+
+ignore =
+    E203,
+    W503,
+    F401,
+    E114,
+    E116,
+    F811
+
+statistics = True
+count = True

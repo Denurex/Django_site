@@ -1,0 +1,55 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'trainings/css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="trainings">
+    <h1 class="trainings__title">Тренировки в категории: {{ category.name }}</h1>
+
+    <!-- Сортировка -->
+    <div class="trainings__sort">
+        <label class="trainings__label">Сортировать по:</label>
+        <select id="price-sort" class="trainings__select" name="sort" onchange="location = this.value;">
+            <option value="{% url 'training_list_by_category_page' category.slug %}?sort=asc"
+                    {% if request.GET.sort == 'asc' %}
+                        selected
+                    {% endif %}>
+                возрастанию цены
+            </option>
+            <option value="{% url 'training_list_by_category_page' category.slug %}?sort=desc"
+                    {% if request.GET.sort == 'desc' %}
+                        selected
+                    {% endif %}>
+                убыванию цены
+            </option>
+            <option value="{% url 'training_list_by_category_page' category.slug %}?sort=data"
+                    {% if request.GET.sort == 'data' %}
+                        selected
+                    {% endif %}>
+                дате
+            </option>
+        </select>
+    </div>
+
+    <!-- Список тренировок -->
+    <ul class="trainings__list">
+        {% for training in trainings %}
+        <li class="trainings__item">
+            <a class="trainings__link" href="{% url 'training_detail_page' category.slug training.training_id %}">
+                <span class="trainings__name">{{ training.title }}</span>
+                <span class="trainings__date">{{ training.date|date:"Y-m-d H:i" }}</span>
+                <span class="trainings__price">{{ training.price }}₽</span>
+            </a>
+        </li>
+        {% empty %}
+        <li class="trainings__empty">Нет доступных тренировок в этой категории.</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Ссылка "Назад" -->
+    <a class="trainings__back" href="{% url 'category_list_page' %}">Назад к списку категорий</a>
+</section>
+{% endblock %}

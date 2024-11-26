@@ -1,0 +1,6 @@
+{% for el in cats %} <!--переменная cats которую возвращает функция show_cat из файла testtags.py -->
+<p>{{el.name}}</p>
+{% if forloop.last%}
+<p>последнтй элемент это {{el.name}}</p>
+{%endif%}
+{%endfor%}

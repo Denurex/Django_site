@@ -1,0 +1,189 @@
+
+
+h2 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+    letter-spacing: 0.2px;
+    color: #252B42;
+    margin:0;
+
+}
+
+h3 {
+    width: auto;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0.1px;
+    color: #252B42;
+    margin:10px 0;
+}
+
+h4 {
+    width: 400px;
+    height: 60px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    /* or 150% */
+    letter-spacing: 0.2px;
+    /* Inside auto layout */
+    flex: none;
+    color: #737373;
+    flex-grow: 0;
+    margin: 20px 0;
+}
+
+h5 {
+    width: auto;
+    height: 24px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: #252B42;
+    margin:5px 0;
+}
+
+h6 {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    margin: 0 0 10px 0;
+    color: #737373;
+}
+
+/* Основные стили для всей страницы */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Блок приветствия (Hero) */
+.hero {
+    background-image: url('/static/main/img/1.jpg'); /* Замените на ваш путь к изображению */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero__title {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero__subtitle {
+    font-size: 24px;
+}
+
+/* Секция направлений */
+.directions {
+    background-color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.directions__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* width: auto; */
+    /* height: auto; */
+    gap: 50px;
+}
+
+.directions__head-content {
+    padding: 0px;
+    gap: 10px;
+    text-align: center;
+    align-self: center;
+}
+
+.directions__main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+    padding: 0px;
+    gap: 30px;
+    height: auto;
+    width: 100%;
+}
+
+.directions__card-item {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 40px;
+    gap: 5px;
+    width: 328px;
+    height: 293px;
+    background: #FFFFFF;
+    border: 1px solid #A9D6FF;
+    border-radius: 11px;
+    justify-content: center;
+}
+
+
+.directions__title {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.directions__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.directions__item {
+    font-size: 18px;
+}
+
+.directions__link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    background-color: #f0f0f0;
+    padding: 20px 40px;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.directions__link:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .hero__title {
+        font-size: 36px;
+    }
+
+    .hero__subtitle {
+        font-size: 20px;
+    }
+
+    .directions__list {
+        flex-direction: column;
+    }
+
+    .directions__link {
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,41 @@
+{%load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="{% static 'users/css/login_reg.css' %}">
+</head>
+<body class="page">
+    <div class="login-register">
+        <div class="login-register__container">
+            <h1 class="login-register__title">Войти в аккаунт</h1>
+
+            <form class="login-register__form" method="POST">
+                {% csrf_token %}
+
+                <div class="login-register__field">
+                    <label class="login-register__label" for="username">Логин</label>
+                    <input class="login-register__input" type="text" id="username" name="username" required>
+                </div>
+
+                <div class="login-register__field">
+                    <label class="login-register__label" for="password">Пароль</label>
+                    <input class="login-register__input" type="password" id="password" name="password" required>
+                </div>
+
+                <button class="login-register__button" type="submit">Войти</button>
+
+                <div class="login-register__links">
+                    <a class="login-register__link" href="{% url 'signup_page' %}">Регистрация</a>
+                    <a class="login-register__link" href="{% url 'main_page' %}">На главную</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+

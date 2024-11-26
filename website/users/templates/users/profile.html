@@ -1,0 +1,41 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+  <title>Главная страница</title>
+{% endblock %}
+
+
+{% block content %}
+    <h1>Профиль</h1>
+    <h2>{{user.first_name}} {{user.last_name}}</h2>
+    {% if user.is_trainer %}
+        {% for training in trainings %}
+            <div style="height: 50px; display:flex; justify-content: center; align-items: center;">
+                <h3 style="margin: 0 20px 0 0;">{{training.title}} {{training.description| lower}}</h3>
+                <form action="{% url 'delete_training_page' training.training_id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Удалить</button>
+                </form>
+                <a href="{% url 'edit_training_page' training.training_id %}">
+                    <button  type="submit" class="btn btn-danger">Изменить</button>
+                </a>
+
+            </div>
+        {% endfor %}
+    {% else %}
+        {% for booking in bookings %}
+            {% if booking.status == 'pending'%}
+                <div style="height: 50px; display:flex; justify-content: center; align-items: center;">
+                    <a href="{% url 'training_detail_page' booking.training.category.slug booking.training.training_id %}">
+                        <h3 style="margin: 0 20px 0 0;">{{booking.training.title}} {{booking.training.description| lower}}</h3>
+                    </a>
+                    <form action="{% url 'cancel_page' booking.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Отменить</button>
+                    </form>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}

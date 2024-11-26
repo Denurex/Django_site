@@ -1,0 +1,17 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+    <h1>{{ trainings.title }}</h1>
+    <p>Категория: {{ category.name }}</p>
+    <p>Дата: {{ trainings.date|date:"Y-m-d H:i" }} </p>
+    <p>Описание: {{ trainings.description }}</p>
+    <p>Тренер: {{ trainings.trainer.username }}</p>
+    <p>Цена: {{ trainings.price }}₽</p>
+    <p>Доступные места: {{ trainings.available_seats }}</p>
+    <a href="{% url 'training_list_by_category_page' category.category_id %}">Назад к списку тренировок</a>
+    {% if user.is_client %}
+    <button>
+        <a href="{% url 'booking_workout_page' trainings.training_id %}">Записаться</a>
+    </button>
+    {% endif %}
+{% endblock %}

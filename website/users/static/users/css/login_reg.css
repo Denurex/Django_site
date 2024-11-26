@@ -1,0 +1,106 @@
+
+/* Основные стили страницы */
+.page {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Блок авторизации */
+.login-register {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.login-register__container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-register__title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: normal;
+    color: #333;
+}
+
+/* Поля формы */
+.login-register__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-register__field {
+    margin-bottom: 20px;
+    flex-direction: column;
+    display: flex;
+}
+
+.login-register__label {
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.login-register__input {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.login-register__input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.login-register__input::placeholder {
+    font-size: 13px; /* Укажите нужный размер шрифта */
+    color: #999; /* Опционально можно изменить цвет */
+}
+
+
+/* Кнопка отправки формы */
+.login-register__button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-register__button:hover {
+    background-color: #0056b3;
+}
+
+/* Ссылки */
+.login-register__links {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.login-register__link {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+    margin: 0 5px 0 5px;
+}
+
+.login-register__link:hover {
+    color: #0056b3;
+}

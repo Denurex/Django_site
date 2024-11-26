@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<h1>Booking for {{ training.title }}</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="num_participants">Number of participants:</label>
+    <input type="number" name="num_participants" id="num_participants" min="1" value="1" required>
+    <button type="submit">Book Now</button>
+</form>
+
+{% endblock %}

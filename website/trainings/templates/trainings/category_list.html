@@ -1,0 +1,14 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+<h1>Категории тренировок</h1>
+<ul>
+    {% for category in categories %}
+        <li>
+            <a href="{% url 'training_list_by_category_page' category.slug %}">
+                {{ category.name }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

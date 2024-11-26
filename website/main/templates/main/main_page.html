@@ -1,0 +1,40 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+  <title>Главная страница</title>
+{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <!-- Блок приветствия -->
+    <section class="hero">
+        <div class="hero__content">
+            <h1 class="hero__title">Добро пожаловать в MMDance!</h1>
+            <p class="hero__subtitle">Танцы и воздушная гимнастика для всех!</p>
+        </div>
+    </section>
+
+    <!-- Блок направлений -->
+    <section class="directions">
+        <div class="directions__container" >
+            <div class ='directions__head-content' >
+                <h2>Наши направления</h2>
+            </div>
+            <div class="directions__main-content">
+                <div class = "directions__card-item">
+                   <p>AAAAAAAAAAAAAAAAA</p>
+                </div>
+                <div class = "directions__card-item">
+                    <p>BBBBBBBBBBBBBBBBBBBBB</p>
+                </div>
+                <div class = "directions__card-item">
+                    <p>BBBBBBBBBBBBBBBBBBBBB</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

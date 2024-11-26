@@ -1,0 +1,60 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'trainings/css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="create-training__container">
+        <h1 class="page__title">Создать новую тренировку</h1>
+        <form method="POST" class="form form--training">
+            {% csrf_token %}
+            <div class="test">
+                <div class="test1">
+                    <div class="form__group form__group--title">
+                        <label for="id_title" class="form__label">Название тренировки</label>
+                        {{ form.title }}
+                    </div>
+                    <div class="test">
+                        <div class="form__group form__group--category">
+                            <label for="id_category" class="form__label">Категория</label>
+                            {{ form.category}}
+                        </div>
+                        <div class="form__group form__group--trainer">
+                            <label for="id_trainer" class="form__label">Тренер</label>
+                            {{ form.trainer }}
+                        </div>
+                    </div>
+                    <div class="form__group form__group--max-participants">
+                        <label for="id_max_participants" class="form__label">Кол-во участников</label>
+                        {{ form.max_participants }}
+                    </div>
+                </div>
+                    <div class="test1">
+                        <div class="form__group form__group--date">
+                        <label for="id_date" class="form__label">Дата и время</label>
+                        {{ form.date }}
+                    </div>
+                    <div class="form__group form__group--duration">
+                        <label for="id_duration" class="form__label">Длительность (в минутах)</label>
+                        {{ form.duration }}
+                    </div>
+                    <div class="form__group form__group--price">
+                        <label for="id_price" class="form__label">Цена</label>
+                        {{ form.price }}
+                    </div>
+                </div>
+            </div>
+            <div class="form__group form__group--description">
+                <label for="id_description" class="form__label">Описание</label>
+                {{ form.description }}
+            </div>
+            <button type="submit" class="button button--submit">Сохранить</button>
+        </form>
+        <a href="{% url 'category_list_page' %}" class="link link--back">Вернуться к списку категорий</a>
+    </div>
+
+{% endblock %}
